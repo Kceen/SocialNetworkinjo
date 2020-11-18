@@ -1,0 +1,33 @@
+<div class="col-sm-6 col-12 mt-3 mb-3 ml-auto mr-auto">
+    <div class="row p-3">
+        <div class="col-12">
+            
+            <h4 *ngIf="success == 'false'" class="font-weight-bold"> Username already taken </h4>
+            
+            <form #form="ngForm" (ngSubmit)="register(form)">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input required type="text" class="form-control" id="username" name="username" ngModel
+                        #username="ngModel" aria-describedby="username" placeholder="Enter username">
+                    <small *ngIf="username.invalid && username.touched" id="usernameHelp" class="form-text"> Username is
+                        required </small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input required type="password" class="form-control" name="password" id="password" ngModel
+                        #password="ngModel" placeholder="Enter password">
+                    <small *ngIf="password.invalid && password.touched" id="passwordHelp" class="form-text"> Password is
+                        required </small>
+                </div>
+                <div class="form-group">
+                    <label for="password2">Repeat password</label>
+                    <input required type="password" class="form-control" name="password2" id="password2" ngModel
+                        #password2="ngModel" placeholder="Repeat password...">
+                    <small *ngIf="password.value != password2.value" id="password2Help" class="form-text"> Passwords don't match </small>
+                </div>
+                <button [disabled]="form.invalid || password.value != password2.value " type="submit"
+                    class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

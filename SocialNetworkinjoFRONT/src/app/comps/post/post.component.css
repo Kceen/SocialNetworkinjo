@@ -1,0 +1,30 @@
+#grade * {
+    border-radius: 0;
+}
+
+#heartIcon:hover {
+    color:rgb(219, 0, 0);
+}
+
+#postPostedBy {
+    background: linear-gradient(90deg, rgba(66,103,178,1) 0%, rgba(0,236,255,1) 100%);
+    color: white;
+}
+
+#postCreatedOn {
+    background: linear-gradient(270deg, rgba(66,103,178,1) 0%, rgba(0,236,255,1) 100%);
+    color: white;
+}
+
+#deletePostButton {
+    font-size: 1.5em;
+}
+
+#deletePostButton:hover {
+    color:rgb(212, 0, 0);
+}
+
+#changePostButton:hover {
+    cursor: pointer;
+    font-weight: bold;
+}

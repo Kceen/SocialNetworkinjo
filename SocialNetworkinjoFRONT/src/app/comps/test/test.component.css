@@ -1,0 +1,11 @@
+#newCommentTextArea {
+    resize: none;
+}
+
+#postCommentButton {
+    background: linear-gradient(90deg, rgba(66,103,178,1) 0%, rgba(0,236,255,1) 100%);
+    color:white;
+    font-size: 1em;
+    padding: 5px;
+    font-weight: bold;
+}

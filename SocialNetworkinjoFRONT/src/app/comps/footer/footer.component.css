@@ -1,0 +1,10 @@
+#footer {
+    background-color: rgb(49, 49, 49);
+    color: white;
+    padding: 20px;
+}
+
+#footerLogo {
+    font-weight: bold;
+    font-style: italic;
+}

@@ -1,0 +1,29 @@
+<div class="col-12 p-2 text-center" [style.display]="showDeleteWarningVar">
+    <p> Are you sure you want to delete this comment? </p>
+    <button (click)="deleteComment()"> YES </button>
+    <button (click)="hideDeleteWarning()"> NO </button>
+</div>
+
+<div *ngIf="!showChangeForm" class="col-12 p-2 border">
+    <p id="commentDate"> {{comment.createdOn | date:"dd.MM.yy - HH:mm"}} </p>
+    <p id="commentContent"> <span class="font-weight-bold"> {{comment.creatorUsername}} </span>: {{comment.content}}
+    </p>
+</div>
+<div *ngIf="showChangeForm" class="col-12 p-2 border">
+    <form class="text-center" #form="ngForm" (ngSubmit)="changeComment(form)">
+        <textarea id="changeCommentTextArea" class="form-control w-100" name="changeCommentContent" maxlength="500" rows="3" ngModel
+        #changeCommentContent="ngModel" placeholder={{comment.content}}></textarea>
+        <p> Are you sure you want to change this comment? </p>
+        <button id="changeCommentButton" type="submit"> Yes </button>
+        <button (click)="showChangeForm = false"> No </button>
+    </form>
+</div>
+
+<div class="row m-0">
+    <div *ngIf="user.username == comment.creatorUsername" class="col-6 p-1 text-center" id="changeComment">
+        <p (click)="showChangeForm = true" class="m-0"> Change </p>
+    </div>
+    <div *ngIf="user.username == comment.creatorUsername" class="col-6 p-1 text-center" id="deleteComment">
+        <p (click)="showDeleteWarning()" class="m-0"> Delete </p>
+    </div>
+</div>

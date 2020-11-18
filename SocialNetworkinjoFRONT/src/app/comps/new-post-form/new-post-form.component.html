@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-sm-6 col-12 m-auto">
+        <form class="text-center" #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <textarea id="newPostTextArea" class="form-control w-100 mb-3" name="newPostContent" maxlength="500" rows="3"
+                ngModel #newPostContent="ngModel" placeholder="Add a new post..." required></textarea>
+            <button [disabled]="form.invalid" id="newPostButton" type="submit" class="btn btn-primary"> Post </button>
+        </form>
+    </div>
+</div>

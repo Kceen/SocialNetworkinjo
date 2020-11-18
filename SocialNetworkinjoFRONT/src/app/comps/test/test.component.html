@@ -1,0 +1,27 @@
+<h1 class="text-center font-weight-bold m-3"> The Wall </h1>
+
+<div *ngIf="updatePostsVar" class="col-sm-6 col-12 mt-3 mb-3 ml-auto mr-auto text-center">
+    <h3> There are new posts </h3>
+    <h3 (click)="updatePosts()"> Click to update </h3>
+</div>
+
+<app-new-post-form (newPostEmitter)="addNewPost($event)"></app-new-post-form>
+
+<div *ngFor="let post of posts" class="col-sm-6 col-12 mt-5 mb-5 ml-auto mr-auto"
+    style="border:1px solid rgb(158, 158, 158)">
+    <app-post [post]="post" [posts]="posts"></app-post>
+
+    <app-comments [comments]="post.comments"></app-comments>
+
+    <div class="row">
+        <div id="addComment" class="col-12 p-2">
+            <form #form="ngForm" (ngSubmit)="addComment(form, post)">
+                <textarea id="newCommentTextArea" class="form-control w-100 mb-2" name="newCommentContent"
+                    maxlength="500" rows="2" ngModel #newCommentContent="ngModel" placeholder="Add a comment"
+                    required></textarea>
+                <button id="postCommentButton" type="submit" class="btn btn-primary" [disabled]="form.invalid"> Comment
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

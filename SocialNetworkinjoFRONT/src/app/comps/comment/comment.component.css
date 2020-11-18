@@ -1,0 +1,19 @@
+#commentDate, #commentContent {
+    margin-bottom: 0;
+}
+
+#changeComment {
+    font-weight: bold;
+    color:white;
+    background-color: rgb(38, 176, 255);
+}
+
+#deleteComment {
+    font-weight: bold;
+    color:white;
+    background-color: rgb(238, 32, 25);
+}
+
+#changeComment, #deleteComment:hover {
+    cursor: pointer;
+}
